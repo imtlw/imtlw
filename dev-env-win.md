@@ -36,7 +36,9 @@ wsl --install -d Ubuntu-26.04
 
 ## WSL2配置
 
-1.在`%UserProfile%\`路径中创建一个`.wslconfig`配置文件，完整路径：`%UserProfile%\.wslconfig`
+- 在`%UserProfile%\`路径中创建一个`.wslconfig`配置文件，完整路径：`%UserProfile%\.wslconfig`
+- 复制下列内容到`%UserProfile%\.wslconfig`配置文件当中，具体配置可参考宿主机进行略微调整。
+- 官方配置说明：[WSL中的高级设置配置](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config)
 
 ```ini
 [boot]
