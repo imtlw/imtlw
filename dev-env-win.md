@@ -177,3 +177,21 @@ wsl -d Ubuntu2604
  # 设置开机自启（默认已开启）
  sudo systemctl enable mysql
  ```
+
+## 安装GoLang
+  1.打开`Ubuntu`的终端窗口，输入下列命令：
+   ```bash
+   # 下载Go的最新版本
+   wget https://go.dev/dl/go1.26.6.linux-amd64.tar.gz
+
+   # 解压Go到指定路径
+   sudo tar -xzf go1.26.6.linux-amd64.tar.gz -C /usr/local/
+   ```
+
+  2.配置`Go`的相关环境路径
+   - 编辑下列环境变量到`~/.zshrc`文件中
+   ```bash
+   export GOROOT=/usr/local/go
+   export GOPATH=$HOME/go
+   export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+   ```
