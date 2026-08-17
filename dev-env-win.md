@@ -30,4 +30,31 @@ wsl --set-default-version 2
 # 安装Ubuntu-26.04
 wsl --install -d Ubuntu-26.04
 
+# 当Ubuntu下载安装完之后会自动提示创建默认用户
+# 按照提示输入一个用户名和密码即可。
 ```
+
+## WSL2配置
+
+1.在`%UserProfile%\`路径中创建一个`.wslconfig`配置文件，完整路径：`%UserProfile%\.wslconfig`
+
+```ini
+[boot]
+systemd=true
+
+[wsl2]
+memory=8GB
+processors=4
+swap=4GB
+
+[time]
+useWindowsTimezone=true
+```
+
+## 对Ubuntu系统的一些配置
+
+1.更新`package`
+ - 在**Ubuntu**的窗口中执行下列命令：
+   ```bash
+   sudo apt update && sudo apt full-upgrade -y
+   ```
