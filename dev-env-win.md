@@ -179,6 +179,7 @@ wsl -d Ubuntu2604
  ```
 
 ## 安装GoLang
+
   1.打开`Ubuntu`的终端窗口，输入下列命令：
    ```bash
    # 下载Go的最新版本
@@ -195,3 +196,28 @@ wsl -d Ubuntu2604
    export GOPATH=$HOME/go
    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
    ```
+
+## 安装Redis
+
+  1.打开`Ubuntu`的终端窗口，输入下列命令：
+  ```bash
+  sudo apt-get install lsb-release curl gpg
+  curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+  sudo chmod 644 /usr/share/keyrings/redis-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+  sudo apt-get update
+  sudo apt-get install redis
+  ```
+
+ 2.设置`Redis`自启&启动`Redis`
+ ```bash
+ # 设置Redis自启动
+ sudo systemctl enable redis-server
+
+ # 启动Redis
+ sudo systemctl start redis-server
+
+ # 查看Redis是否启动成功
+ ps -ef | grep redis
+ ```
+
