@@ -36,6 +36,7 @@ wsl --install -d Ubuntu-26.04
 
 ## WSL2配置
 
+1.WSL性能配置
 - 在`%UserProfile%\`路径中创建一个`.wslconfig`配置文件，完整路径：`%UserProfile%\.wslconfig`
 - 复制下列内容到`%UserProfile%\.wslconfig`配置文件当中，具体配置可参考宿主机进行略微调整。
 - 官方配置说明：[WSL中的高级设置配置](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config)
@@ -45,6 +46,22 @@ wsl --install -d Ubuntu-26.04
 memory=8GB
 processors=4
 swap=4GB
+```
+
+2.WSL存储位置优化
+
+```powershell
+# 1.导出WSL分发版
+wsl --export Ubuntu-26.04 D:\Develop\wsl\ubuntu2604.tar
+
+# 2.注销原有的WSL分发版
+wsl --unregister Ubuntu-26.04
+
+# 3.导入WSL分发版到新位置
+wsl --import Ubuntu2604 D:\Develop\wsl\ubuntu2604 D:\Develop\wsl\ubuntu2604.tar --version 2
+
+# 4.启动定制好的WSL分发版
+wsl -d Ubuntu2604
 ```
 
 ## 对Ubuntu系统的一些配置
