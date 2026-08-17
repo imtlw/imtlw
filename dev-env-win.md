@@ -71,3 +71,23 @@ wsl -d Ubuntu2604
    ```bash
    sudo apt update && sudo apt full-upgrade -y
    ```
+
+2.安装[oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+ - 首先安装`zsh`，在**Ubuntu**的窗口中执行下列命令：
+   ```bash
+   sudo apt install zsh
+
+   # 设置zsh为默认Shell
+   chsh -s $(which zsh)
+
+   # 安装oh-my-zsh
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+   # 安装zsh-syntax-highlighting插件
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
+   
+3.修改zsh插件配置
+ - 编辑`~/.zshrc`文件，将`plugins`的参数更改为`plugins=(git encode64 zsh-syntax-highlighting)`
+
+4.让配置生效，在终端中输入`source ~/.zshrc`即可。
