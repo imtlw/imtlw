@@ -92,11 +92,28 @@ wsl -d Ubuntu2604
 
 4.让配置生效，在终端中输入`source ~/.zshrc`即可。
 
-## 安装Docker Desktop
+## 为Ubuntu安装nodejs
 
- - 在[Docker Desktop官网](https://www.docker.com/products/docker-desktop/)下载对应自己系统的`Docker Desktop`安装文件。
- - **如果不确定自己的平台类型，可以通过`Win+R`键输入`cmd`，在命令窗口中输入下列命令：**
-   ```cmd
-   echo %PROCESSOR_ARCHITECTURE%
-   ```
-   返回的即是你的当前平台类型。
+- 推荐使用[nvm](https://github.com/nvm-sh/nvm)来安装nodejs
+  1.安装`nvm`
+  ```bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh | bash
+
+  # nvm已经自动设置了.zshrc文件, 执行下列命令让.zshrc生效
+  source ~/.zshrc
+  ```
+
+  2.使用`nvm`来安装`nodejs`
+  ```bash
+  # 安装LTS版本的nodejs
+  nvm install --lts
+  ```
+
+  3.nodejs的配置
+  ```bash
+  # 修改NPM为国内镜像
+  npm config set registry https://registry.npmmirror.com/
+  
+  # 使用pnpm
+  corepack enable pnpm
+  ```
