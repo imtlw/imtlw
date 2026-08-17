@@ -148,4 +148,32 @@ wsl -d Ubuntu2604
    # 退出MySQL
    exit;
    ```
- 
+
+ 4.MySQL的安全配置（执行MySQL官方安全脚本，优化默认配置，禁用匿名用户、禁止root远程登录、删除测试数据库等）
+ ```bash
+ sudo mysql_secure_installation
+
+ # 1.输入ubuntu的root密码
+ # 2.输入mysql的root密码
+ # 3.是否启用密码强度检测（推荐选择Y，按需求选择强度）
+ # 4.是否修改root密码（已设置，选择N即可）
+ # 5.是否删除匿名用户（选择Y）
+ # 6.是否禁止root账户远程登录（选择Y，后续需要远程访问可以修改）
+ # 7.是否删除test数据库（选择Y）
+ # 8.是否刷新权限（选择Y）
+ ```
+
+ 5.MySQL常用命令：
+ ```bash
+ # 启动MySQL
+ sudo systemctl start mysql
+
+ # 停止MySQL
+ sudo systemctl stop mysql
+
+ # 重启MySQL
+ sudo systemctl restart mysql
+
+ # 设置开机自启（默认已开启）
+ sudo systemctl enable mysql
+ ```
