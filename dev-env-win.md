@@ -117,3 +117,35 @@ wsl -d Ubuntu2604
   # 使用pnpm
   corepack enable pnpm
   ```
+
+## 安装MySQL
+ 
+ 1.在`Ubuntu`命令窗口中执行以下命令安装最新的MySQL：
+   ```bash
+   sudo apt install -y mysql-server
+   ```
+
+ 2.验证`MySQL`是否安装成功，查看`MySQL`服务状态，显示`active (running)`即为正常。
+  ```bash
+  sudo systemctl mysql
+
+  # 查看MySQL的版本
+  mysql --version
+  ```
+
+ 3.修改`root`用户密码
+ - MySQL8.0默认无密码，需手动配置，在`Ubuntu`终端中输入以下命令：
+   ```bash
+   # 默认密码为空，直接回车即可。
+   sudo mysql -u root -p
+
+   # 修改root用户的密码，将your_password替换成你的密码。
+   ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'your_password';
+
+   # 刷新权限，使配置生效。
+   FLUSH PRIVILEGES;
+
+   # 退出MySQL
+   exit;
+   ```
+ 
