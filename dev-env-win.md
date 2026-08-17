@@ -41,16 +41,10 @@ wsl --install -d Ubuntu-26.04
 - 官方配置说明：[WSL中的高级设置配置](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config)
 
 ```ini
-[boot]
-systemd=true
-
 [wsl2]
 memory=8GB
 processors=4
 swap=4GB
-
-[time]
-useWindowsTimezone=true
 ```
 
 ## 对Ubuntu系统的一些配置
