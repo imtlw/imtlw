@@ -91,3 +91,12 @@ wsl -d Ubuntu2604
  - 编辑`~/.zshrc`文件，将`plugins`的参数更改为`plugins=(git encode64 zsh-syntax-highlighting)`
 
 4.让配置生效，在终端中输入`source ~/.zshrc`即可。
+
+## 安装Docker Desktop
+
+ - 在[Docker Desktop官网](https://www.docker.com/products/docker-desktop/)下载对应自己系统的`Docker Desktop`安装文件。
+ - **如果不确定自己的平台类型，可以通过`Win+R`键输入`cmd`，在命令窗口中输入下列命令：**
+   ```cmd
+   echo %PROCESSOR_ARCHITECTURE%
+   ```
+   返回的即是你的当前平台类型。
