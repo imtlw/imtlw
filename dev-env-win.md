@@ -27,4 +27,7 @@ wsl --update
 # 将WSL2设置为默认的版本
 wsl --set-default-version 2
 
+# 安装Ubuntu-26.04
+wsl --install -d Ubuntu-26.04
+
 ```
